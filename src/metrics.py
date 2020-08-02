@@ -52,7 +52,7 @@ def money_precision_at_k(recommended_list, bought_list,
 
     precision = np.sum(
                 np.multiply(flags, prices_recommended[:k])
-                ) / np.sum(prices_recommended[:k])
+                      ) / np.sum(prices_recommended[:k])
 
     return precision
 
@@ -85,6 +85,6 @@ def money_recall_at_k(recommended_list, bought_list,
 
     recall = np.sum(
                 np.multiply(flags, prices_recommended[:k])
-                ) / np.sum(prices_bought)
+                   ) / np.sum(prices_bought)
 
     return recall
