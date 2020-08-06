@@ -39,7 +39,7 @@ def precision_at_k(recommended_list, bought_list, k=5):
 
 
 def money_precision_at_k(recommended_list, bought_list,
-                         prices_recommended, k=5):
+                         items_price, k=5):
     '''
     Precision - доля релевантных товаров среди рекомендованных =
     Какой % рекомендованных товаров юзер купил
@@ -47,6 +47,7 @@ def money_precision_at_k(recommended_list, bought_list,
     Money Precision@k = (revenue of recommended items @k that are relevant) /
                         (revenue of recommended items @k)
     '''
+    prices_recommended = [items_price[item] for item in recommended_list]
 
     flags = np.isin(recommended_list[:k], bought_list)
 
